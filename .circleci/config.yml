@@ -85,7 +85,7 @@ jobs:
             virtualenv venv
             . venv/bin/activate
             pip install --upgrade pip
-            pip install -r tox
+            pip install -r --user tox
             py.test --vv packages/ml_api/tests
 
   test_ml_api_py37:
