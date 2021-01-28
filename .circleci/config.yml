@@ -39,9 +39,11 @@ jobs:
       - run:
           name: Run tests with Python 3.6
           command: |
-            sudo pip install --upgrade pip
-            pip install --user tox
-            tox -e py36
+            virtualenv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r packages/ml_api/requirments.txt
+            py.test --vv packages/ml_api/tests
 
   test_regression_model_py37:
     docker:
