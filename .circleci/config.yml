@@ -1,5 +1,6 @@
 version :2
 jobs:
+
   test_regression_model:
     working_directory:~/project
     docker:
@@ -14,11 +15,12 @@ jobs:
             pip install --upgrade pip
             pip install -r packages/regression_model/requirments.txt
             chmod +x ./scripts/fetch_kaggle_dataset.sh
-            ./scripts/fetch_kaggle_dataset.sh
+            ./scripts/fetch_kaggle_dataset.s h
             py.test -vv packages/regression_models/tests
             
 workflows:
-version:2
-test-all:
-  jobs:
-    - test_regression_model
+
+  version:2
+  test-all:
+    jobs:
+      - test_regression_model
